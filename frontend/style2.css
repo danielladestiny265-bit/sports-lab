@@ -304,11 +304,11 @@
 }
 /* CATEGORY PAGE */
 .dis{
-    display: block;
+    display: bock;
 }
 .category-section {
-    width: 110%;
-    margin: 20px 50px;
+    width: 108%;
+    margin: 20px 10px;
 }
 .navv {
     display: flex;
@@ -339,11 +339,11 @@
     font-weight: 700;
 }
 .category-hero {
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px;
+    padding: 50px;
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid rgba(51, 65, 85, 0.8);
@@ -356,7 +356,6 @@
     box-sizing: border-box;
 }
 .hero-content {
-    max-width: 700px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -401,7 +400,7 @@
     font-style: normal;
 }
 .hero-description {
-    max-width: 620px;
+    max-width: 700px;
     margin: 0 0 25px;
     color: #d1d5db;
     font-size: 17px;
@@ -548,32 +547,40 @@
         height: 28px;
     }
 }
-/* PRODUCT PAGE */
-.fit{
-    padding: 0px 30px;
+/* PRODUCT PAGE*/
+.fit {
+    width: 100%;
+    padding: 20px 10px;
 }
-.product-section{
+.products-section {
+    padding: 10px 40px;
     display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 100%;
+    align-items: stretch;
 }
 .product-card {
-    width: 100%;
-    max-width: 300px;
+    flex: 0 0 calc((100% - 75px) / 4);
+    min-width: 0;
     padding: 14px;
+    box-sizing: border-box;
     background-color: #020469b2;
     border-radius: 10px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 .product-card:hover {
-    margin-top: -8px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-top: -18px;
+    box-shadow: 0 8px 20px rgba(8, 2, 102, 0.596);
 }
 .product-details img {
+    display: block;
     width: 100%;
+    height: 200px;
+    object-fit: contain;
+    object-position: center;
+    background-color: #fff;
     border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-.product-card:hover {
-    transform: scale(1.04);
 }
 .product-details {
     color: white;
@@ -593,7 +600,7 @@
     margin-bottom: 4px;
 }
 .rating-number {
-    color: #fffdfd;
+    color: #fff;
     font-size: 14px;
     font-weight: bold;
 }
@@ -623,28 +630,90 @@
     display: block;
     width: 100%;
     padding: 12px;
+    box-sizing: border-box;
     background-color: #0d0488;
-    color: #ffffff;
+    color: #fff;
     border: 1px solid #1c088b;
     border-radius: 25px;
     font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 .add-to-cart:hover {
+    margin-top: -8px;
     background-color: #0d61cf;
 }
+
 .add-to-cart:active {
     transform: scale(0.98);
 }
-@media (max-width: 480px) {
-    .section-heading h1 {
-        font-size: 20px;
+@media (max-width: 1000px) {
+    .fit {
+        padding: 20px;
+    }
+    .products-section {
+        gap: 20px;
     }
     .product-card {
-        max-width: 100%;
+        flex-basis: calc((100% - 40px) / 3);
     }
-    .product-image-link {
-        height: 250px;
+    .product-details img {
+        height: 180px;
+    }
+}
+@media (max-width: 700px) {
+    .fit {
+        padding: 15px;
+    }
+    .products-section {
+        gap: 15px;
+    }
+    .product-card {
+        flex-basis: calc((100% - 15px) / 2);
+        padding: 10px;
+    }
+    .product-details img {
+        height: 160px;
+    }
+    .current-price {
+        font-size: 20px;
+    }
+    .add-to-cart {
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 400px) {
+    .fit {
+        padding: 10px;
+    }
+
+    .products-section {
+        gap: 10px;
+    }
+
+    .product-card {
+        flex-basis: calc((100% - 10px) / 2);
+        padding: 8px;
+    }
+
+    .product-details img {
+        height: 130px;
+    }
+
+    .product-title {
+        font-size: 12px;
+    }
+
+    .current-price {
+        font-size: 17px;
+    }
+
+    .add-to-cart {
+        font-size: 11px;
+        padding: 9px 3px;
     }
 }
